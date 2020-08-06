@@ -12,31 +12,31 @@ Windows.UI.Composition という Windows Runtime な DirectComposition ではな
 
 DirectComposition 自体は Windows 8 から問題なく使えるので，独自の UI Framework を作る際には有用です。ただし，OS にべったり依存したインターフェースだったため互換性のサポートをするには相当の熟練プログラマーである必要があると思われます。
 
-- Direct2D Effects (Windows 8 および Windows 7 Platform Update)
-  https://docs.microsoft.com/en-us/windows/win32/direct2d/effects-overview
+- Direct2D Effects (Windows 8 および Windows 7 Platform Update)<br>
+  https://docs.microsoft.com/en-us/windows/win32/direct2d/effects-overview<br>
   DirectComposition のエフェクトにも使われている。なぜ COM-based な DirectComposition は生の Effect を受け付ける設計じゃないのかはわからん。
-- DirectComposition (Windows 8 から; Apple 系の Core Animation に相当する技術だと思ってもらうと良いです)
+- DirectComposition (Windows 8 から; Apple 系の Core Animation に相当する技術だと思ってもらうと良いです)<br>
   https://docs.microsoft.com/en-us/windows/win32/directcomp/directcomposition-portal
-  - IDCompositionDevice
-    Windows 8の初期版。拡大縮小などの基本的なもののみ搭載。初期の Metro UI と言われていた頃や当時の IE はこれを使って実装されていると思われる。エフェクトなどは使えない。
+  - IDCompositionDevice<br>
+    Windows 8の初期版。拡大縮小などの基本的なもののみ搭載。初期の Metro UI と言われていた頃や当時の IE はこれを使って実装されていると思われる。エフェクトなどは使えない。<br>
     https://docs.microsoft.com/en-us/windows/win32/api/dcomp/nn-dcomp-idcompositiondevice
-  - IDCompositionDevice2 と IDCompositionDesktopDevice
-    Windows 8.1 でなぜか再構築されているインターフェース。二つに分離されているが，IDCompositionDevice2 が Store apps から使えるわけでもなく何故分けたのかわからない。
-    https://docs.microsoft.com/en-us/windows/win32/api/dcomp/nn-dcomp-idcompositiondevice2
+  - IDCompositionDevice2 と IDCompositionDesktopDevice<br>
+    Windows 8.1 でなぜか再構築されているインターフェース。二つに分離されているが，IDCompositionDevice2 が Store apps から使えるわけでもなく何故分けたのかわからない。<br>
+    https://docs.microsoft.com/en-us/windows/win32/api/dcomp/nn-dcomp-idcompositiondevice2<br>
     https://docs.microsoft.com/en-us/windows/win32/api/dcomp/nn-dcomp-idcompositiondesktopdevice
-  - IDCompositionDevice3
-    これも Windows 8.1 で追加されたもの。つまりエフェクト類は Windows 8.1 でも使える。
+  - IDCompositionDevice3<br>
+    これも Windows 8.1 で追加されたもの。つまりエフェクト類は Windows 8.1 でも使える。<br>
     https://docs.microsoft.com/en-us/windows/win32/api/dcomp/nn-dcomp-idcompositiondevice3
-- Windows.UI.Composition (実質 IDCompositionDevice4)
-  https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/visual-layer-in-desktop-apps
+- Windows.UI.Composition (実質 IDCompositionDevice4)<br>
+  https://docs.microsoft.com/en-us/windows/apps/desktop/modernize/visual-layer-in-desktop-apps<br>
   API が大きく刷新された。
-  - Compositor
-    メインとなるクラス。いわゆる DirectX 系の 〜Device と同じ感覚で良い。初期の Windows 10 から使えるが実質 Windows 10 RS2 (build 15063) から使えるものと考えた方が良い。
+  - Compositor<br>
+    メインとなるクラス。いわゆる DirectX 系の 〜Device と同じ感覚で良い。初期の Windows 10 から使えるが実質 Windows 10 RS2 (build 15063) から使えるものと考えた方が良い。<br>
     https://docs.microsoft.com/en-us/uwp/api/windows.ui.composition.compositor?view=winrt-19041
-    - CreateBackdropBrush
+    - CreateBackdropBrush<br>
       Windows 10 RS1 (build 14393) で追加
-    - CreateHostBackdropBrush
-      Windows 10 RS2 (build 15063) で追加。
+    - CreateHostBackdropBrush<br>
+      Windows 10 RS2 (build 15063) で追加。<br>
       WinUI 3 ではこの機能が必須で RS2 以降しかサポートできない。
 
 
